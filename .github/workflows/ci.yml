@@ -1,23 +1,15 @@
-name: CI Pipeline
+name: Hello World
 
 on:
   push:
-  pull_request:
 
 jobs:
-  build_and_test:
+  say_hello:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Hello step
+        run: echo "Hello from Kuanysh"
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: pip install pytest
-
-      - name: Run tests
-        run: pytest
+      - name: Show OS
+        run: uname -a
